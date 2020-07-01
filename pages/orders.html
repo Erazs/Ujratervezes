@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/css/style.css"> 
+    <link rel="stylesheet" href="/css/style.css">
 </head>
+
 <body>
     <ul>
         <li>
@@ -23,5 +25,81 @@
     </ul>
 
     <h1>Orders</h1>
+
+    <div class="container">
+        <fieldset>
+            <legend>Personal details</legend>
+            <form>
+                <div>
+                    <label for="name">Name: * </label>
+                    <input id="name" name="name" type="text" placeholder="Name" required>
+                </div>
+                <div>
+                    <label for="email">Email: * </label>
+                    <input id="email" name="email" type="email" placeholder="Email address" required>
+                </div>
+                <div>
+                    <label for="phone">Phone: * </label>
+                    <input id="phone" name="phone" type="tel" placeholder="Phone" required>
+                </div>
+                <div>
+                    <label for="address">Address: * </label>
+                    <input id="address" name="address" type="text" placeholder="Address" required>
+                </div>
+                <div>
+                    <label for="comment">Comment</label>
+                    <textarea id="comment" name="comment" rows="5"></textarea>
+                </div>
+
+
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Product details</legend>
+            <form>
+                <span>Add ons</span>
+                <div>
+                    <input checked id="nothing" name="extra" type="checkbox" value="0">
+                    <label for="nothig">Don't need</label>
+                </div>
+                <div>
+                    <input id="chees" name="chees" type="checkbox" value="300">
+                    <label for="chees">Add on 1</label>
+                </div>
+                <div>
+                    <input id="double-chees" name="double-chees" type="checkbox" value="600">
+                    <label for="double-chees">Add on 2</label>
+                </div>
+                <div>
+                    <input id="double-meet" name="double-meet" type="checkbox" value="1000">
+                    <label for="double-meet">Add on 3</label>
+                </div>
+                <div>
+                    <input id="double-salat" name="duble-salat" type="checkbox" value="1500">
+                    <label for="double-salat">Add on 4</label>
+                </div>
+                <div>
+                    <input id="double-cucamber" name="double-cucamber" type="checkbox" value="2000">
+                    <label for="double-cucamber">Add on 5</label>
+                </div>
+                <div>
+                    <label for="sauce">Sauce</label>
+                    <select id="sauce" name="sauce">
+                        <option value="0" selected>Ketcup</option>
+                        <option value="100" selected>Mayo</option>
+                        <option value="200" selected>BigMac</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="quatity">Quantity</label>
+                    <input id="quantity" name="quantity" type="number" min="1" max="10">
+                </div>
+        </fieldset>
+        <div>
+            <input type="button" value="Send Order"> Price: <span>£</span> 1200
+        </div>
+        </form>
+    </div>
 </body>
+
 </html>
