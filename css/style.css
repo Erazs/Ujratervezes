@@ -8,13 +8,13 @@
     src: url("/font/Oswald/static/Oswald-Bold.ttf");
     font-weight: 100;
 }
+/*
 @font-face{
     font-family: "SFPro";
-    src: url("/font/SF\ Pro/SF-Pro-text-Bold");
+    src: url("/font/SF\ Pro/SFPro");
     font-weight: 100;
 }
-
-
+*/
 h1 {
     color: brown;
     font-family: "SFPro";
@@ -43,7 +43,7 @@ li{
     display: inline-block;
     width: 100px;
     height: 100px;
-    background-color: rgb(255, 0, 255);
+    background-color: rgb(136, 4, 136);
 }
 #colorDiv2 {
     display: inline-block;
@@ -61,4 +61,57 @@ html{
     background-color: #e0e0e0;
    /* background-image: url("../img/pattern2.jpg");
     */
+}
+#menuBar{
+    display: inline;
+    width: max-content;
+    height: 200px;
+    background-color: hotpink;
+
+}
+#Div3 {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(226, 186, 8);
+}
+#rightCol {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    background-color: rgb(226, 186, 8);
+    margin-right: 0;
+    padding-right: 0;
+}
+#leftCol {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    background-color: rgb(226, 186, 8);
+ /*   margin-left: 0;
+    padding-right: 0;
+  */  
+}
+
+#weatherWidget {
+  
+    background-color: hotpink;
+}
+#wd{
+    color: black;
+}
+#wotd{
+    background-color: rgb(226, 186, 8);
+}
+#celsiusDisplay{
+    background-color: rgb(226, 186, 8);
+    color: black;
+    display: inline;
+    float: right;
+    
+
+}
+#offers{
+    display: inline;
+    float: right;
 }

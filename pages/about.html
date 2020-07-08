@@ -4,63 +4,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/css/style.css"> 
+    <title>About</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/lib/bootstrap-4.5.0-dist/css/bootstrap.min.css">
 </head>
 
 <body>
-   <ul>
-        <li>
-            <a href="/pages/index.html">Home</a>
-        </li>
-        <li>
-            <a href="/pages/products.html">Products</a>
-        </li>
-        <li>
-            <a href="/pages/orders.html">Orders</a>
-        </li>
-        <li>
-            <a href="/pages/about.html">About</a>
-        </li>
-    </ul>
-    <h1>About</h1>
-    <table>
-        <caption>Opening hours</caption>
-        <thead>
-            <tr>
-                <th>Day</th>
-                <th>Open</th>
-                <th>Close</th>
-            </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>Monday - Friday</td>
-            <td>09:00</td>
-            <td rowspan="2">21:00</td>
 
-        </tr>
-        <tr>
-            <td>Saturday</td>
-            <td>10:00</td>
+    <div id="weatherWidget">
+
+        <div class="form-group">
+            <div id="celsiusDisplay">Co</div>
+            <div id="wd">Weather</div>
+            <div id="offers">offers</div>
             
+            <div class="dropdown">
+                <label for="day-input">Choos a day! </label>
+                <select name="day-input" id="day-input">
+                    <option value="0">Monday</option>
+                    <option value="1">Tuesday</option>
+                    <option value="2">Wednesday</option>
+                    <option value="3">Thursday</option>
+                    <option value="4">Friday</option>
+                    <option value="5">Saturday</option>
+                    <option value="6">Sunday</option>
+                    
+                    
+                </select>
+                <button type="button" class="btn btn-primary" id="wotd" onclick="">Weather on this day</button>
+            </div>
 
-        </tr>
-        <tr>
-            <td>Sunday</td>
-            
-            <td colspan="2">Closed</td>
+        </div>
 
-        </tr>
-    </tbody>
-    <tfoot>
-        <tr>
-            <td>
-                &copy; Budapest, 2020
-            </td>
-        </tr>
-    </tfoot>
-    </table>
+
+    </div>
+
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/pages/index.html">Burgers</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/pages/index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/pages/products.html">Products</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link " href="/pages/orders.html">Orders</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/pages/about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/pages/menu.html">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/pages/login.html">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/pages/helloBootstrap.html">helloBootstrap</a>
+                </li>
+
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-2" id="leftCol"></div>
+            <div class="col-8" id="mainCol">
+                <h1>About</h1>
+                <table>
+                    <caption>Opening hours</caption>
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Open</th>
+                            <th>Close</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Monday - Friday</td>
+                            <td>09:00</td>
+                            <td rowspan="2">21:00</td>
+
+                        </tr>
+                        <tr>
+                            <td>Saturday</td>
+                            <td>10:00</td>
+
+
+                        </tr>
+                        <tr>
+                            <td>Sunday</td>
+
+                            <td colspan="2">Closed</td>
+
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>
+                                &copy; Budapest, 2020
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+
+            </div>
+            <div class="col-2" id="rightCol"></div>
+        </div>
+    </div>
+
+
+
+
 </body>
 
 </html>
