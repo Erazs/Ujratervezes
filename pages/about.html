@@ -9,14 +9,14 @@
     <link rel="stylesheet" href="/lib/bootstrap-4.5.0-dist/css/bootstrap.min.css">
 </head>
 
-<body>
+<body onload="weatherWidget();">
 
     <div id="weatherWidget">
 
         <div class="form-group">
-            <div id="celsiusDisplay">Co</div>
+            <div id="temperatureDisplay">Co</div>            
             <div id="wd">Weather</div>
-            <div id="offers">offers</div>
+            <div id="offersDisplay">Todays offer </div>
             
             <div class="dropdown">
                 <label for="day-input">Choos a day! </label>
@@ -31,8 +31,18 @@
                     
                     
                 </select>
-                <button type="button" class="btn btn-primary" id="wotd" onclick="">Weather on this day</button>
+                <input name="degrease" type="radio" id="degreaseC" value="0"></input>
+                <label>Celsius</label>
+                <input name="degrease" type="radio" id="degreaseF" value="1"></input>
+                <label>Farenheit</label>
+
+                <button type="button" class="btn btn-primary" id="bwotd" onclick="weatherWidget()">Weather on this day</button>
+                
             </div>
+                    <div class="col-4" id="minTemp">Min</div>
+                    <div class="col-4" id="avgTemp">Avg</div>
+                    <div class="col-4" id="maxTemp">Max</div>
+             
 
         </div>
 
@@ -131,7 +141,7 @@
         </div>
     </div>
 
-
+    <script src="/js/main.js"></script>
 
 
 </body>
