@@ -59,15 +59,148 @@ function checkPersonalOrderData() {
 
 function setVisible(id, visible) {
     var o = document.getElementById(id);
-    if (typeof(o) != 'undefined') o.style.visibility = visible ? 'visible' : 'hidden';
-    if (typeof(o) == 'undefined') alert("Element with id '" + id + "' not found.");
+    if (typeof (o) != 'undefined') o.style.visibility = visible ? 'visible' : 'hidden';
+    if (typeof (o) == 'undefined') alert("Element with id '" + id + "' not found.");
 }
 
 
 
-var temperatures = [11.2, 14.4, 13.0, 17.3, 16.9, 18.2, 16.5];
-function weatherWidget(){
-    const day = document.querySelector('#day').value;
-    const temperatureDiv = document.querySelector('#temperature').value;
-    temperatureDiv.innerHTML = temperatures[day]+ '&deg;C';
+var temperatures = [-11.2, 14.4, 13.0, 17.3, 16.9, 18.2, 16.5];
+var temperaturesUpperLimits = [0, 15, 20, 25, 50];
+var offers = [
+    " Hot Chocolate",
+    " Green Tea",
+    " Carrot Cake",
+    " Ice Cream",
+    " Limonade"
+
+];
+
+let day = document.querySelector('#day-input').value;
+let temperatureDiv = document.querySelector('#temperatureDisplay');
+let offersDiv = document.querySelector('#offersDisplay');
+let tempType = "&deg;C";
+
+function displayOffer() {
+    for (let i = 0; i < temperaturesUpperLimits.length; i++) {
+
+        if (temperatures[day] <= temperaturesUpperLimits[i]) {
+            //      temperatureDiv.innerHTML += '<br><div id="offersDisplay">' + ":  " + offers[i] + '</div>';
+            offersDiv.innerHTML = "Todays : " + offers[i] + day;
+
+            break;
+        }
+        //   temperatureDiv.innerHTML = temperatures[day] + "  " + tempType;
+    }
 }
+
+
+function weatherWidget() {
+
+    // temperatureDiv.innerHTML = temperatures[day] + "  " + tempType;
+    /* 
+    for (let i = 0; i < temperaturesUpperLimits.length; i++) {
+        if (temperatures[day] <= temperaturesUpperLimits[i]) {
+            temperatureDiv.innerHTML += '<br><div class="offer">' + ":  " + offers[i] + '</div>';
+            break;
+        }
+    }
+  */
+
+    //displayOffer();
+
+    if (document.querySelector('#degreaseC').checked == true) {
+        displayOffer();
+        displayMinMaxAvgInC();
+        displayDegreesInC();
+        /*   
+           tempType = "&deg;C";
+   
+           minTemp.innerHTML = minTemperature() + " " + tempType;
+           avgTemp.innerHTML = avgTemperature() + " " + tempType;
+           maxTemp.innerHTML = maxTemperature() + " " + tempType;
+         */
+        // temperatureDiv.innerHTML = temperatures[day] + "  " + tempType;
+
+    } else if (document.querySelector('#degreaseF').checked == true) {
+
+        displayOffer();
+        // tempType = "&deg;F";
+        displayMinMaxAvgInF();
+        displayDegreesInF();
+
+        //   minTemp.innerHTML = (9* minTemperature()+ (32*5))/5 + " " + tempType;
+        // avgTemp.innerHTML = (9* avgTemperature()+ (32*5))/5 + " " + tempType;
+        // maxTemp.innerHTML = (9* maxTemperature()+ (32*5))/5 + " " + tempType;
+        // temperatureDiv.innerHTML = (9* temperatures[day] +(32*5))/5 + "  " + tempType;
+    }
+
+    else {
+
+        displayOffer();
+        displayMinMaxAvgInC();
+        displayDegreesInC();
+
+        //    minTemp.innerHTML = minTemperature() + " " + tempType;
+        //   avgTemp.innerHTML = avgTemperature() + " " + tempType;
+        //    maxTemp.innerHTML = maxTemperature() + " " + tempType;
+
+    }
+
+    //  temperatureDiv.innerHTML = temperatures[day]+ '&deg;C ' + tempType;
+
+    //   minTemp.innerHTML = minTemperature() + "" + tempType;
+    // avgTemp.innerHTML = avgTemperature() + "" + tempType;
+    //  maxTemp.innerHTML = maxTemperature() + "" + tempType;
+}
+function displayDegreesInC() {
+    tempType = "&deg;C";
+    temperatureDiv.innerHTML = temperatures[day] + " " + tempType;
+}
+
+function displayDegreesInF() {
+    tempType = "&deg;F";
+    temperatureDiv.innerHTML = (9 * temperatures[day] + (32 * 5)) / 5 + " " + tempType;
+}
+function displayMinMaxAvgInF() {
+    tempType = "&deg;F";
+    minTemp.innerHTML = (9 * minTemperature() + (32 * 5)) / 5 + " " + tempType;
+    avgTemp.innerHTML = (9 * avgTemperature() + (32 * 5)) / 5 + " " + tempType;
+    maxTemp.innerHTML = (9 * maxTemperature() + (32 * 5)) / 5 + " " + tempType;
+}
+
+function displayMinMaxAvgInC() {
+    tempType = "&deg;C";
+    minTemp.innerHTML = minTemperature() + "" + tempType;
+    avgTemp.innerHTML = avgTemperature() + "" + tempType;
+    maxTemp.innerHTML = maxTemperature() + "" + tempType;
+}
+
+function minTemperature() {
+    let min = temperatures.length != 0 ? temperatures[0] : 0;
+    for (let i = 0; i < temperatures.length; i++) {
+        if (temperatures[i] < min) {
+            min = temperatures[i];
+        }
+    }
+    return min;
+}
+
+function maxTemperature() {
+    let max = temperatures.length != 0 ? temperatures[0] : 0;
+    for (let i = 0; i < temperatures.length; i++) {
+        if (temperatures[i] > max) {
+            max = temperatures[i];
+        }
+    }
+    return max;
+}
+
+function avgTemperature() {
+    let avg = 0;
+    for (let i = 0; i < temperatures.length; i++) {
+        avg += temperatures[i];
+    }
+    return temperatures.length != 0 ? avg / temperatures.length : 0;
+}
+
